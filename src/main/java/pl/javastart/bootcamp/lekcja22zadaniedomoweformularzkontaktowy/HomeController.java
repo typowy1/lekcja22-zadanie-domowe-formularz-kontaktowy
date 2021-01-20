@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
 
+    private MailSender mailSender;
     private EmailRepository emailRepository;
 
-    public HomeController(EmailRepository emailRepository) {
+    public HomeController(MailSender mailSender, EmailRepository emailRepository) {
+        this.mailSender = mailSender;
         this.emailRepository = emailRepository;
     }
 
@@ -35,7 +37,7 @@ public class HomeController {
     public String sendingEmail(MyEmail myEmail) throws EmailException {
         emailRepository.add(myEmail);
         MyEmail lastEmail = emailRepository.getLastEmail();
-        emailRepository.sendEmail(lastEmail);
+        mailSender.sendEmail(lastEmail);
         return "redirect:/wyslano";
     }
 
