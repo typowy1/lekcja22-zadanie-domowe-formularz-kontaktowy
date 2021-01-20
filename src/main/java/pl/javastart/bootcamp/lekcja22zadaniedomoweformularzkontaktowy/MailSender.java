@@ -13,9 +13,10 @@ public class MailSender {
         Email email = new SimpleEmail();
         email.setHostName("smtp.gmail.com");
         email.setSmtpPort(465);
-        email.setAuthenticator(new DefaultAuthenticator("testjavakurs", "javakurs1!"));
+        email.setAuthenticator(new DefaultAuthenticator("testjavakurs@gmail.com", "javakurs1!"));
         email.setSSLOnConnect(true);
         email.setFrom(myEmail.getEmail(), myEmail.getName());
+        email.addReplyTo(myEmail.getEmail());
         email.setSubject(myEmail.getTitle());
         email.setMsg(myEmail.getMessage());
         email.addTo("testjavakurs@gmail.com");
