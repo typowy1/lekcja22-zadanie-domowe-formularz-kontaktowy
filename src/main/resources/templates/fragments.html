@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+
+<div class="header" th:fragment="header">
+    <h1>IT-Solutions</h1><br/>
+</div>
+
+<div class="menu" th:fragment="menu">
+    <a href="/" class="btn btn-primary">Strona główna</a>
+    <a href="/regulamin" class="btn btn-primary">Regulamin</a>
+    <a href="/kontakt" class="btn btn-primary">Kontakt</a><br/>
+</div>
+
+<footer class="footer" th:fragment="footer">
+    <p>Autor: Kamil Kozłowski</p>
+    <p><a class="footerMail" href="testjavakurs@gmail.com">testjavakurs@gmail.com</a></p>
+</footer>
+
+</body>
+</html>

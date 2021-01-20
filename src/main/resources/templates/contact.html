@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+</head>
+<body>
+<div class="content">
+    <div th:replace="fragments :: header"></div>
+    <div th:replace="fragments :: menu"></div>
+    <h3>Kontakt:</h3><br/>
+    <form action="/kontakt" method="post" th:object="${myEmail}">
+        <div class=" mb-3">
+            <label for="name" class="form-label">Wpisz imię</label>
+            <input type="text" class="form-control" id="name" placeholder="Imię" th:field="*{name}">
+        </div>
+        <div class=" mb-3">
+            <label for="title" class="form-label">Wpisz tytuł wiadomosci</label>
+            <input type="text" class="form-control" id="title" placeholder="Tytuł" th:field="*{title}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Wpisz adres email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email"
+                   th:field="*{email}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Wiadomość</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{message}"></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Wyślij</button>
+        </div>
+    </form>
+    <div th:replace="fragments :: footer"></div>
+</body>
+</html>
