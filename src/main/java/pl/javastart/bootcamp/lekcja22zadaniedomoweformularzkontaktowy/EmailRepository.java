@@ -34,6 +34,7 @@ public class EmailRepository {
         email.setMsg(myEmail.getMessage());
         email.addTo("testjavakurs@gmail.com");
         System.out.println("Rozpoczęto wysyłanie wiadomości email");
+        System.out.println("Dane wiadomości: " + myEmail.getEmail() + " " + myEmail.getName() + " " + myEmail.getTitle() + " " + myEmail.getMessage());
         email.send();
         System.out.println("Wiadomość wysłana");
     }
