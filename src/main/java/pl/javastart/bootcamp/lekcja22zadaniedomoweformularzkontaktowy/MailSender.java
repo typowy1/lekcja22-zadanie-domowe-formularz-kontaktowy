@@ -18,7 +18,7 @@ public class MailSender {
         email.setFrom(myEmail.getEmail(), myEmail.getName());
         email.addReplyTo(myEmail.getEmail());
         email.setSubject(myEmail.getTitle());
-        email.setMsg(myEmail.getMessage());
+        email.setMsg("Potwierdzenie wysłania maila do testjavakurs.\n" + "Zapytanie: \n" + myEmail.getMessage());
         email.addTo("testjavakurs@gmail.com");
         email.addTo(myEmail.getEmail());
         System.out.println("Rozpoczęto wysyłanie wiadomości email");
