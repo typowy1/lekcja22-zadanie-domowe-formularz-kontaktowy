@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 @Repository
 public class EmailRepository {
@@ -20,7 +19,8 @@ public class EmailRepository {
     }
 
     public MyEmail getLastEmail() {
-        Stream<MyEmail> stream = emails.stream();
-        return stream.reduce((first, second) -> second).orElse(null);
+        return emails.stream()
+                .reduce((first, second) -> second)
+                .orElse(null);
     }
 }
