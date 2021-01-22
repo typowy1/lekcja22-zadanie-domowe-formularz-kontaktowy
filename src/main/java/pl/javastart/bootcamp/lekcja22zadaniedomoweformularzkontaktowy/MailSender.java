@@ -17,11 +17,12 @@ public class MailSender {
     private static final String startMessage = "Rozpoczęto wysyłanie wiadomości email";
     private static final String endMessage = "Wiadomość wysłana";
     private static final String dataFromFormMessage = "Dane z formularza: ";
+    private static final int port = 465;
 
     public void sendEmail(MyEmail myEmail) throws EmailException {
         Email email = new SimpleEmail();
         email.setHostName(gmailHostName);
-        email.setSmtpPort(465);
+        email.setSmtpPort(port);
         email.setAuthenticator(new DefaultAuthenticator(userName, password));
         email.setSSLOnConnect(true);
         email.setFrom(myEmail.getEmail(), myEmail.getName());
