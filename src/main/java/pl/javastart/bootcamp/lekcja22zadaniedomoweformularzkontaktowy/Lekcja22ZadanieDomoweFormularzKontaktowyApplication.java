@@ -9,5 +9,4 @@ public class Lekcja22ZadanieDomoweFormularzKontaktowyApplication {
     public static void main(String[] args) {
         SpringApplication.run(Lekcja22ZadanieDomoweFormularzKontaktowyApplication.class, args);
     }
-
 }
